@@ -1,10 +1,12 @@
 extends state
 
-func state_process() -> void:
+@onready var playerRef:playerClass = machine.player_refrence
+
+func _state_process() -> void:
 	pass
 	
-func state_ready() -> void:
+func _state_ready() -> void:
 	pass
 	
-func state_changed() -> void:
+func _state_changed() -> void:
 	pass

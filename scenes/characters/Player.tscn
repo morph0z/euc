@@ -179,12 +179,11 @@ metadata/_custom_type_script = "uid://dg35hu21jk5bo"
 [node name="inputHandler" type="Node" parent="Components" node_paths=PackedStringArray("player")]
 script = ExtResource("5_gj1sn")
 player = NodePath("../..")
-directional_inputs = null
 metadata/_custom_type_script = "uid://cyidwtu88rv04"
 
-[node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("playerRefrence", "states_in_machine")]
+[node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("player_refrence", "states_in_machine")]
 script = ExtResource("7_miirx")
-playerRefrence = NodePath("..")
+player_refrence = NodePath("..")
 states_in_machine = [NodePath("Idle_State")]
 metadata/_custom_type_script = "uid://c6lgbrmrtpyrk"
 
@@ -206,14 +205,21 @@ machine = NodePath("..")
 state_name = &"Air Movement"
 metadata/_custom_type_script = "uid://033wjvy8dxeh"
 
-[node name="Falling_State" type="Node" parent="stateMachine"]
+[node name="Falling_State" type="Node" parent="stateMachine" node_paths=PackedStringArray("machine")]
 script = ExtResource("11_mqro2")
+machine = NodePath("..")
+state_name = &"Falling"
 metadata/_custom_type_script = "uid://033wjvy8dxeh"
 
-[node name="stateMachineHandler" type="Node" parent="."]
+[node name="stateMachineHandler" type="Node" parent="." node_paths=PackedStringArray("player_refrence", "state_machine_refrence", "input_handler_refrence")]
 script = ExtResource("12_bpxo2")
+player_refrence = NodePath("..")
+state_machine_refrence = NodePath("../stateMachine")
+input_handler_refrence = NodePath("../Components/inputHandler")
 metadata/_custom_type_script = "uid://dth7feihxfcxn"
 
+[connection signal="got_off_ground" from="." to="stateMachineHandler" method="_on_player_got_off_ground"]
+[connection signal="touched_ground" from="." to="stateMachineHandler" method="_on_player_touched_ground"]
 [connection signal="key_press" from="Components/inputHandler" to="." method="_on_input_handler_key_press"]
 [connection signal="changedState" from="stateMachine" to="stateMachine/Idle_State" method="_on_state_machine_changed_state"]
 [connection signal="changedState" from="stateMachine" to="stateMachine/Walking_State" method="_on_state_machine_changed_state"]

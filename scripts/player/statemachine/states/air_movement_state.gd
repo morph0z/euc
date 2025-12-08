@@ -1,14 +1,14 @@
 extends state
 
-@onready var playerRef:playerClass = machine.playerRefrence
+@onready var playerRef:playerClass = machine.player_refrence
 
-func state_process() -> void:
+func _state_process() -> void:
 	playerRef.sprite.play(playerRef.fallingAnimationName)
 	
-func state_ready() -> void:
+func _state_ready() -> void:
 	pass
 	
-func state_changed() -> void:
+func _state_changed() -> void:
 	pass
 
 func _on_state_machine_changed_state() -> void:
