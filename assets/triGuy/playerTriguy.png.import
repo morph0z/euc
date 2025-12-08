@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bftr1rhpyf4dd"
-path.s3tc="res://.godot/imported/playerTriguyFalling.png-022fc689620a646d6b41ece9fd79e820.s3tc.ctex"
+uid="uid://csngcmbm8u2vo"
+path.s3tc="res://.godot/imported/playerTriguy.png-a81f323d05c284fe0d665893420282d0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/playerTriguyFalling.png"
-dest_files=["res://.godot/imported/playerTriguyFalling.png-022fc689620a646d6b41ece9fd79e820.s3tc.ctex"]
+source_file="res://assets/triGuy/playerTriguy.png"
+dest_files=["res://.godot/imported/playerTriguy.png-a81f323d05c284fe0d665893420282d0.s3tc.ctex"]
 
 [params]
 

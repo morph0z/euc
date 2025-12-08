@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqssie03shqle"]
 
-[ext_resource type="PackedScene" uid="uid://c2jqidn6ryv4c" path="res://scenes/characters/Player.tscn" id="1_kyfjp"]
+[ext_resource type="PackedScene" uid="uid://c2jqidn6ryv4c" path="res://scenes/characters/Player.tscn" id="1_8k2vm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyfjp"]
 metallic_specular = 1.0
@@ -21,7 +21,7 @@ background_energy_multiplier = 0.96
 
 [node name="TestWorld" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_kyfjp")]
+[node name="Player" parent="." instance=ExtResource("1_8k2vm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905046, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]

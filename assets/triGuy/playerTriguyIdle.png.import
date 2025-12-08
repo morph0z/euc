@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jgb3fm133j2"
-path.s3tc="res://.godot/imported/playerTriguyIdle.png-d74452a41d23463109687842e38eb29c.s3tc.ctex"
+path.s3tc="res://.godot/imported/playerTriguyIdle.png-ac1579e64671b943e887b0dbc5c22298.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/playerTriguyIdle.png"
-dest_files=["res://.godot/imported/playerTriguyIdle.png-d74452a41d23463109687842e38eb29c.s3tc.ctex"]
+source_file="res://assets/triGuy/playerTriguyIdle.png"
+dest_files=["res://.godot/imported/playerTriguyIdle.png-ac1579e64671b943e887b0dbc5c22298.s3tc.ctex"]
 
 [params]
 
