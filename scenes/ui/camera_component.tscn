@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://33vbtynxjkrp"]
+
+[ext_resource type="Script" uid="uid://wn6e8bswot5" path="res://scripts/player/components/ui/cameraMoving.gd" id="1_iteni"]
+
+[node name="CameraComponent" type="Camera3D"]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.141101)
+gizmo_extents = 1.85
+
+[node name="cameraMoving" type="Node" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("1_iteni")
+camera = NodePath("..")
+metadata/_custom_type_script = "uid://wn6e8bswot5"
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 3)
+debug_shape_custom_color = Color(0, 1, 0, 1)
+debug_shape_thickness = 5

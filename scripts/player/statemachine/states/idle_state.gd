@@ -1,9 +1,9 @@
 extends state
 
-@onready var playerRef:playerClass = machine.player_refrence
+@onready var _player_ref:playerClass = machine.player_refrence
 
 func _state_process() -> void:
-	playerRef.sprite.play(playerRef.idleAnimationName)
+	_player_ref.sprite.play(_player_ref.idleAnimationName)
 	
 func _state_ready() -> void:
 	pass

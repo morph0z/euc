@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhlkqh61w57s1"]
+
+[ext_resource type="Script" uid="uid://cuykc3ev555ra" path="res://scripts/player/components/dropShadowComponent.gd" id="1_cojnw"]
+[ext_resource type="Texture2D" uid="uid://c6sox8w3xvpae" path="res://assets/triGuy/TriguyDropShadow.png" id="2_7ycwx"]
+
+[node name="DropShadowComponent" type="Node3D"]
+script = ExtResource("1_cojnw")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.99097, 0)
+size = Vector3(2, 5.98193, 2)
+texture_albedo = ExtResource("2_7ycwx")
+modulate = Color(0.114897, 0.114897, 0.114897, 1)
+upper_fade = 1.76868e-05
+lower_fade = 0.621159

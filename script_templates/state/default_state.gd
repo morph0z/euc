@@ -1,6 +1,6 @@
 extends state
 
-@onready var playerRef:playerClass = machine.player_refrence
+@onready var _player_ref:playerClass = machine.player_refrence
 
 func _state_process() -> void:
 	pass

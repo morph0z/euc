@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dubopqdfq0bki"]
+
+[ext_resource type="Script" uid="uid://civhioqpcahmd" path="res://scripts/ui/debug_ui.gd" id="1_h2fnn"]
+
+[node name="DebugUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2fnn")
+
+[node name="FPS" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="currentState" type="Label" parent="."]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 5.0
+offset_right = 844.0
+offset_bottom = 28.0

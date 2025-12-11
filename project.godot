@@ -16,6 +16,17 @@ run/main_scene="res://scenes/worlds/debug/test_world.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalScript="*res://scripts/GlobalScript.gd"
+Conductor="*res://addons/conductor/condcutor.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+Shaker="*res://addons/shaker/src/Shaker.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/conductor/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
