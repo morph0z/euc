@@ -1,7 +1,8 @@
 @icon("res://addons/conductor/icons/Conductor.png")
 extends AudioStreamPlayer
 
-var bpm : float = 120
+
+var bpm : float = 99
 var beats_per_measure : int = 4
 var first_beat_offset : float = 0
 

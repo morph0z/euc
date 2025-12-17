@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://blbfpfyiqdg2g"]
+
+[ext_resource type="Script" uid="uid://bxsmfmjkkmnig" path="res://scripts/objects/2D/disappearingBlock2D.gd" id="1_2l4se"]
+[ext_resource type="Script" uid="uid://dsk3wv1yb4rho" path="res://addons/conductor/conducted_timer.gd" id="1_mqq8a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l4se"]
+
+[sub_resource type="Curve" id="Curve_mqq8a"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.427083, 0.988764), 1.00938, 1.00938, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_2l4se"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.390625, 0), -8.86891, 0.0, 0, 0]
+point_count = 2
+
+[node name="disappearingBlock2D" type="StaticBody2D"]
+script = ExtResource("1_2l4se")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2l4se")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -7, -9, -9, -7, -10, 7, -10, 9, -9, 10, -7, 10, 7, 9, 9, 7, 10, -7, 10, -9, 9, -10, 7)
+
+[node name="disappearParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_mqq8a")
+
+[node name="disappearPoof" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.95
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 70.0
+scale_amount_curve = SubResource("Curve_2l4se")
+
+[node name="ConductedTimer" type="Node" parent="."]
+script = ExtResource("1_mqq8a")
+wait_beats = 2.0
+autostart = true
+metadata/_custom_type_script = "uid://dsk3wv1yb4rho"
+
+[connection signal="timeout" from="ConductedTimer" to="." method="_on_conducted_timer_timeout"]

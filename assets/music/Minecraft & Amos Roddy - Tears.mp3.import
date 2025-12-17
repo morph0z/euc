@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh74qiv52na0"
+path="res://.godot/imported/Minecraft & Amos Roddy - Tears.mp3-8364ab65c28039f0e9e321830943cff2.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Minecraft & Amos Roddy - Tears.mp3"
+dest_files=["res://.godot/imported/Minecraft & Amos Roddy - Tears.mp3-8364ab65c28039f0e9e321830943cff2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

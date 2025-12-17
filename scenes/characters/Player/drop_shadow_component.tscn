@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhlkqh61w57s1"]
 
 [ext_resource type="Script" uid="uid://cuykc3ev555ra" path="res://scripts/player/components/dropShadowComponent.gd" id="1_cojnw"]
-[ext_resource type="Texture2D" uid="uid://c6sox8w3xvpae" path="res://assets/triGuy/TriguyDropShadow.png" id="2_7ycwx"]
+[ext_resource type="Texture2D" uid="uid://c6sox8w3xvpae" path="res://assets/sprites/triGuy/TriguyDropShadow.png" id="2_7ycwx"]
 
 [node name="DropShadowComponent" type="Node3D"]
 script = ExtResource("1_cojnw")

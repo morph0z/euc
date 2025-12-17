@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3mybdk8cyw1v"]
+
+[ext_resource type="Script" uid="uid://btyku08dasvgc" path="res://scripts/objects/3D/gravityPulse3D.gd" id="1_je2ae"]
+[ext_resource type="Script" uid="uid://dsk3wv1yb4rho" path="res://addons/conductor/conducted_timer.gd" id="2_ut70a"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6wjlq"]
+height = 2.63379
+radius = 0.818848
+
+[sub_resource type="SphereMesh" id="SphereMesh_uwj1a"]
+
+[sub_resource type="Curve" id="Curve_6wjlq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.5761, 0.0, 0, 0]
+point_count = 2
+
+[node name="gravityPulse3D" type="Area3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_je2ae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32239, 0)
+shape = SubResource("CylinderShape3D_6wjlq")
+
+[node name="pulseParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.80169, 0, 0, 0, 1.23418, 0, 0, 0, 0.992102, 0, 1.88419, 0)
+amount = 40
+lifetime = 0.3
+randomness = 0.3
+mesh = SubResource("SphereMesh_uwj1a")
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, -98, 0)
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_6wjlq")
+
+[node name="ConductedTimer" type="Node" parent="."]
+script = ExtResource("2_ut70a")
+autostart = true
+metadata/_custom_type_script = "uid://dsk3wv1yb4rho"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="ConductedTimer" to="." method="_on_conducted_timer_timeout"]

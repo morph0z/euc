@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulfsq6s3j5g5"]
+
+[ext_resource type="PackedScene" uid="uid://omw55c4olf1k" path="res://scenes/characters/Player/Player2D.tscn" id="1_ajg6a"]
+[ext_resource type="PackedScene" uid="uid://blbfpfyiqdg2g" path="res://scenes/objects/2D/disappearingBlock2D.tscn" id="2_e74mg"]
+
+[node name="TestWorld2d" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-95, -19, -93, 33, 74, 36, 125, 6, 118, -15)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-95, -19, -93, 33, 74, 36, 125, 6, 118, -15)
+
+[node name="Player2D" parent="." instance=ExtResource("1_ajg6a")]
+position = Vector2(-75, -61)
+scale = Vector2(0.182644, 0.182644)
+
+[node name="Camera2D" type="Camera2D" parent="Player2D"]
+zoom = Vector2(3, 3)
+
+[node name="disappearingBlock2D" parent="." instance=ExtResource("2_e74mg")]
+position = Vector2(-120, -26)
+disappear_every = 2
+color = Color(0.346743, 0.733735, 1, 1)
+
+[node name="disappearingBlock2D2" parent="." instance=ExtResource("2_e74mg")]
+position = Vector2(-156, -47)
+disappear_every = 2
+inverse_disappearance = true
+color = Color(1, 0, 0, 1)
+
+[node name="disappearingBlock2D3" parent="." instance=ExtResource("2_e74mg")]
+position = Vector2(-193, -68)
+disappear_every = 2
+color = Color(0.346743, 0.733735, 1, 1)
+
+[node name="disappearingBlock2D4" parent="." instance=ExtResource("2_e74mg")]
+position = Vector2(-236, -73)
+disappear_every = 2
+inverse_disappearance = true
+color = Color(1, 0, 0, 1)

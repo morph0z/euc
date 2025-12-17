@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Euc"
 config/tags=PackedStringArray("dont_delete", "my_game", "very_cool")
-run/main_scene="res://scenes/worlds/debug/test_world.tscn"
+run/main_scene="uid://bknismorji4v0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -30,7 +30,7 @@ enabled=PackedStringArray("res://addons/conductor/plugin.cfg", "res://addons/sce
 [file_customization]
 
 folder_colors={
-"res://assets/triGuy/": "red"
+"res://assets/sprites/triGuy/": "red"
 }
 
 [input]

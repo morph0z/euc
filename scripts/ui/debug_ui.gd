@@ -1,7 +1,7 @@
 extends Control
 @onready var fps: Label = $FPS
 @onready var current_state: Label = $currentState
-@export var _player_ref:playerClass
+@export var _player_ref:playerClass3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://og8v7mghhvui"]
+
+[ext_resource type="Script" uid="uid://bt6f67idunvnc" path="res://scripts/objects/disappearingBlock3D.gd" id="1_nslf3"]
+[ext_resource type="ArrayMesh" uid="uid://nj566tn8svsk" path="res://assets/models/beveledCube.obj" id="2_7thya"]
+[ext_resource type="Script" uid="uid://dsk3wv1yb4rho" path="res://addons/conductor/conducted_timer.gd" id="3_nbwpo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k4n85"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4rcd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_osvkj"]
+
+[sub_resource type="Curve" id="Curve_u0dtw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.427083, 0.988764), 1.00938, 1.00938, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_osvkj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.390625, 0), -8.86891, 0.0, 0, 0]
+point_count = 2
+
+[node name="disappearingBlock3D" type="StaticBody3D"]
+visible = false
+script = ExtResource("1_nslf3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k4n85")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.507034, 0, 0, 0, 0.507034, 0, 0, 0, 0.507034, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_c4rcd")
+mesh = ExtResource("2_7thya")
+
+[node name="disappearParticles" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 20
+mesh = SubResource("SphereMesh_osvkj")
+emission_shape = 3
+emission_box_extents = Vector3(0.5, 0.5, 0.5)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_u0dtw")
+
+[node name="disappearPoof" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("SphereMesh_osvkj")
+emission_shape = 3
+emission_box_extents = Vector3(0.6, 0.6, 0.6)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_osvkj")
+
+[node name="ConductedTimer" type="Node" parent="."]
+script = ExtResource("3_nbwpo")
+round_start_beat = true
+autostart = true
+metadata/_custom_type_script = "uid://dsk3wv1yb4rho"
+
+[connection signal="timeout" from="ConductedTimer" to="." method="_on_conducted_timer_timeout"]

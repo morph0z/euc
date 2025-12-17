@@ -6,16 +6,15 @@ class_name levelSelect
 @export var points:Array[Marker2D]
 
 func _ready() -> void:
+	_place_level_point_on_point()
+
+
+func _place_level_point_on_point() -> void:
 	for i in range(0, levels.size()):
-		_place_level_point_on_point(points[i], i)
-
-
-func _place_level_point_on_point(point:Marker2D, number:int) -> void:
-	for i in levels:
 		var _level_button:levelButton = levelButton.new()
-		_level_button.position = point.position
-		_level_button.level = i
-		_level_button.text = "Level : " + str(number)
+		_level_button.position = points[i].position
+		_level_button.level = levels[i]
+		_level_button.text = "Level : " + str(i)
 		_level_button.theme = GlobalScript.GlobalTheme
 		add_child(_level_button)
 	
