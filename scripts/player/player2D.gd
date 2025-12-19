@@ -26,8 +26,10 @@ class_name playerClass2D
 signal touched_ground(touch_point:Vector2)
 signal got_off_ground(remove_point:Vector2)
 
-@export var SPEED:float = 150.0
+@export var SPEED:float = 110.0
 @export var JUMP_VELOCITY:float = 300.0
+
+var spawn_point:Vector2
 
 const MINECRAFT___AMOS_RODDY___TEARS = preload("res://assets/music/Minecraft & Amos Roddy - Tears.mp3")
 
@@ -37,6 +39,7 @@ func _initiate_conductor() -> void:
 
 func _ready() -> void:
 	_initiate_conductor()
+	spawn_point = global_position
 
 func _process(_delta: float) -> void:
 	if debug:
@@ -90,3 +93,7 @@ func _on_input_handler_key_press(key_pressed: InputEvent) -> void:
 
 func _on_conducted_timer_timeout() -> void:
 	squash_and_strech_component.squash()
+
+
+func _on_death_zone_2d_player_entered_death_zone() -> void:
+	global_position = spawn_point

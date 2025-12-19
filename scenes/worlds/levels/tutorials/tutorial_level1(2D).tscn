@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://bijnhvrnas0qy"]
+
+[ext_resource type="PackedScene" uid="uid://cqeuvj7t3ph60" path="res://scenes/objects/2D/deathZone2D.tscn" id="1_ekvc1"]
+[ext_resource type="PackedScene" uid="uid://omw55c4olf1k" path="res://scenes/characters/Player/Player2D.tscn" id="2_isc4v"]
+[ext_resource type="PackedScene" uid="uid://blbfpfyiqdg2g" path="res://scenes/objects/2D/disappearingBlock2D.tscn" id="3_isc4v"]
+
+[node name="TutorialLevel1" type="Node2D"]
+
+[node name="DeathZone2d" parent="." instance=ExtResource("1_ekvc1")]
+position = Vector2(0, 250)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-243, 0, -217, 35, 74, 36, 234, 37, 259, -13, 125, 6, -31, 10)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-243, 0, -217, 35, 74, 36, 234, 37, 259, -13, 125, 6, -31, 10)
+
+[node name="Player2D" parent="." instance=ExtResource("2_isc4v")]
+position = Vector2(-75, -61)
+scale = Vector2(0.182644, 0.182644)
+
+[node name="Camera2D" type="Camera2D" parent="Player2D"]
+zoom = Vector2(3, 3)
+
+[node name="disappearingBlock2D" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(286, -36)
+disappear_every = 2
+color = Color(0.326526, 0.672693, 1, 1)
+
+[node name="disappearingBlock2D4" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(439, -53)
+disappear_every = 2
+color = Color(0.326526, 0.672693, 1, 1)
+
+[node name="disappearingBlock2D8" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(593, -39)
+disappear_every = 2
+color = Color(0.326526, 0.672693, 1, 1)
+
+[node name="disappearingBlock2D3" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(366, -37)
+disappear_every = 2
+color = Color(0.326526, 0.672693, 1, 1)
+
+[node name="disappearingBlock2D2" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(320, -55)
+disappear_every = 2
+inverse_disappearance = true
+color = Color(1, 0, 0, 1)
+
+[node name="disappearingBlock2D5" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(403, -48)
+disappear_every = 2
+inverse_disappearance = true
+color = Color(1, 0, 0, 1)
+
+[node name="disappearingBlock2D6" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(477, -62)
+disappear_every = 2
+inverse_disappearance = true
+color = Color(1, 0, 0, 1)
+
+[node name="disappearingBlock2D7" parent="." instance=ExtResource("3_isc4v")]
+position = Vector2(527, -72)
+disappear_every = 2
+inverse_disappearance = true
+color = Color(1, 0, 0, 1)
+
+[connection signal="player_entered_death_zone" from="DeathZone2d" to="Player2D" method="_on_death_zone_2d_player_entered_death_zone"]

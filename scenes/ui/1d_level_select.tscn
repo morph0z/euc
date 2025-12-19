@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bknismorji4v0"]
 
 [ext_resource type="Script" uid="uid://c6nrdk4qg4chl" path="res://scripts/ui/classes/levelSelect.gd" id="1_8i5os"]
-[ext_resource type="PackedScene" uid="uid://cqssie03shqle" path="res://scenes/worlds/debug/test_world3D.tscn" id="2_q4is3"]
-[ext_resource type="PackedScene" uid="uid://bulfsq6s3j5g5" path="res://scenes/worlds/debug/test_world2D.tscn" id="3_q4is3"]
+[ext_resource type="PackedScene" uid="uid://bijnhvrnas0qy" path="res://scenes/worlds/levels/tutorials/tutorial_level1(2D).tscn" id="3_nqmlc"]
+[ext_resource type="PackedScene" uid="uid://b6v183t2j2dhc" path="res://scenes/worlds/levels/tutorials/tutorial_level2(2D).tscn" id="3_q4is3"]
 
 [node name="1dLevelSelect" type="Control" node_paths=PackedStringArray("points")]
 layout_mode = 3
@@ -16,7 +16,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_8i5os")
-levels = Array[PackedScene]([ExtResource("2_q4is3"), ExtResource("3_q4is3")])
+levels = Array[PackedScene]([ExtResource("3_nqmlc"), ExtResource("3_q4is3")])
 points = [NodePath("L1"), NodePath("L2")]
 metadata/_custom_type_script = "uid://c6nrdk4qg4chl"
 
